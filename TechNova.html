@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechNova | تک‌نُوا</title>
+<meta name="description" content="TechNova؛ فضای آموزشی درس کار و فناوری با تدریس آقای رضایی">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Vazirmatn,Tahoma,sans-serif;background:#070b17;color:#f5f7ff;line-height:1.8;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+header{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(7,11,23,.72);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{max-width:1150px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:22px;font-weight:900;letter-spacing:.5px}
+.logo span{color:#67e8f9}
+nav{display:flex;gap:22px;color:#c8d0e5;font-size:14px}
+nav a:hover{color:#67e8f9}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:130px 22px 80px;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(5px);opacity:.28}
+.hero:before{width:420px;height:420px;background:#2563eb;top:-120px;right:-100px}
+.hero:after{width:360px;height:360px;background:#8b5cf6;bottom:-130px;left:-100px}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:45px 45px;mask-image:linear-gradient(to bottom,black,transparent)}
+.hero-inner{max-width:1150px;width:100%;margin:auto;position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:55px;align-items:center}
+.badge{display:inline-flex;padding:7px 14px;border:1px solid rgba(103,232,249,.25);background:rgba(103,232,249,.08);border-radius:999px;color:#67e8f9;font-size:13px;margin-bottom:20px}
+h1{font-size:clamp(45px,7vw,82px);line-height:1.05;letter-spacing:-2px;margin-bottom:22px}
+h1 span{background:linear-gradient(90deg,#67e8f9,#a78bfa);-webkit-background-clip:text;color:transparent}
+.hero p{font-size:18px;color:#aeb8cf;max-width:650px}
+.buttons{display:flex;gap:13px;margin-top:30px;flex-wrap:wrap}
+.btn{padding:12px 22px;border-radius:13px;font-weight:700;font-size:14px;transition:.25s;border:1px solid rgba(255,255,255,.1)}
+.primary{background:linear-gradient(135deg,#22d3ee,#6366f1);box-shadow:0 10px 35px rgba(34,211,238,.18)}
+.secondary{background:rgba(255,255,255,.05)}
+.btn:hover{transform:translateY(-3px)}
+.hero-card{background:linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.1);padding:28px;border-radius:28px;box-shadow:0 25px 80px rgba(0,0,0,.35);position:relative}
+.orb{height:260px;border-radius:24px;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,rgba(103,232,249,.24),transparent 35%),linear-gradient(135deg,#10172c,#111827);border:1px solid rgba(103,232,249,.13)}
+.orb-icon{font-size:90px;filter:drop-shadow(0 0 30px rgba(103,232,249,.45))}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:13px}
+.stat{padding:13px;text-align:center;border-radius:14px;background:rgba(255,255,255,.045)}
+.stat b{display:block;font-size:20px;color:#67e8f9}.stat small{color:#8893aa}
+section{max-width:1150px;margin:auto;padding:90px 22px}
+.section-title{text-align:center;margin-bottom:45px}
+.section-title h2{font-size:34px;margin-bottom:8px}.section-title p{color:#8f9ab2}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{padding:25px;border:1px solid rgba(255,255,255,.08);border-radius:22px;background:rgba(255,255,255,.035);transition:.25s}
+.card:hover{transform:translateY(-7px);border-color:rgba(103,232,249,.3);background:rgba(255,255,255,.055)}
+.icon{font-size:34px;margin-bottom:13px}.card h3{margin-bottom:7px}.card p{color:#909bb1;font-size:14px}
+.teacher{display:grid;grid-template-columns:.7fr 1.3fr;gap:25px;align-items:stretch}
+.teacher-photo{border-radius:25px;min-height:290px;background:linear-gradient(135deg,#172554,#312e81);display:grid;place-items:center;font-size:90px;border:1px solid rgba(255,255,255,.08)}
+.teacher-info{padding:35px;border-radius:25px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08)}
+.teacher-info h3{font-size:30px}.teacher-info .role{color:#67e8f9;margin-bottom:15px}.teacher-info p{color:#a1abc0}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project{padding:24px;border-radius:20px;background:linear-gradient(135deg,rgba(99,102,241,.13),rgba(34,211,238,.05));border:1px solid rgba(255,255,255,.08)}
+.project span{font-size:12px;color:#67e8f9}.project h3{margin:8px 0}.project p{font-size:14px;color:#9ca7bc}
+.quote{text-align:center;padding:50px 25px;border-radius:25px;background:linear-gradient(135deg,rgba(34,211,238,.09),rgba(139,92,246,.09));border:1px solid rgba(255,255,255,.08)}
+.quote strong{font-size:25px}.quote p{color:#98a4ba;margin-top:8px}
+footer{border-top:1px solid rgba(255,255,255,.08);padding:30px 22px;text-align:center;color:#7f8aa2;font-size:13px}
+footer b{color:#67e8f9}
+@media(max-width:800px){nav{display:none}.hero-inner,.teacher{grid-template-columns:1fr}.hero-card{display:none}.cards{grid-template-columns:1fr}.projects{grid-template-columns:1fr}h1{font-size:52px}}
+</style>
+
+<style>
+#loginOverlay{position:fixed;inset:0;z-index:100;background:rgba(3,6,15,.94);display:grid;place-items:center;padding:20px}
+.login-box{width:min(430px,100%);padding:34px;border-radius:28px;background:linear-gradient(145deg,#111936,#0b1020);border:1px solid rgba(103,232,249,.2);box-shadow:0 30px 100px rgba(0,0,0,.55);text-align:center}
+.login-box .lock{font-size:52px;margin-bottom:10px}.login-box h2{font-size:28px}.login-box p{color:#9ca8bf;font-size:14px;margin:7px 0 22px}
+.login-box input{width:100%;padding:14px 16px;border-radius:13px;border:1px solid rgba(255,255,255,.12);background:#080d1c;color:#fff;font-family:inherit;outline:none;text-align:center;font-size:15px}
+.login-box input:focus{border-color:#67e8f9}
+.login-btn{width:100%;margin-top:12px;padding:13px;border:0;border-radius:13px;background:linear-gradient(135deg,#22d3ee,#6366f1);color:#fff;font-family:inherit;font-weight:800;cursor:pointer}
+#errorMsg{height:25px;color:#fb7185;font-size:13px;margin-top:8px}
+#adminPanel{display:none;position:fixed;right:18px;bottom:18px;z-index:50;width:min(360px,calc(100% - 36px));padding:22px;border-radius:22px;background:#10182d;border:1px solid rgba(103,232,249,.2);box-shadow:0 20px 60px #0008}
+#adminPanel h3{margin-bottom:7px}#adminPanel p{color:#a7b1c5;font-size:13px}
+.admin-actions{display:flex;gap:8px;margin-top:14px}.admin-actions button{flex:1;padding:10px;border-radius:10px;border:1px solid #ffffff18;background:#ffffff09;color:#fff;font-family:inherit;cursor:pointer}
+.admin-actions button:hover{background:#ffffff15}
+#adminWelcome{display:none;position:fixed;top:85px;left:50%;transform:translateX(-50%);z-index:60;padding:13px 22px;border-radius:999px;background:#101a31;border:1px solid rgba(103,232,249,.3);box-shadow:0 10px 40px #0007;color:#eafcff}
+</style>
+</head>
+<body>
+<div id="loginOverlay">
+  <div class="login-box">
+    <div class="lock">🔐</div>
+    <h2>ورود مدیر TechNova</h2>
+    <p>اگر مدیر سایت هستی، رمز مدیریت را وارد کن.</p>
+    <input id="adminPassword" type="password" placeholder="رمز ورود" autocomplete="off">
+    <button class="login-btn" onclick="loginAdmin()">ورود به پنل مدیریت</button>
+    <div id="errorMsg"></div>
+  </div>
+</div>
+<div id="adminWelcome">سلام علی! 👋 به پنل مدیریت TechNova خوش آمدی.</div>
+<div id="adminPanel">
+  <h3>⚡ پنل مدیریت TechNova</h3>
+  <p>ورود مدیر با موفقیت انجام شد. این بخش برای مدیریت نمایشی سایت آماده است.</p>
+  <div class="admin-actions">
+    <button onclick="changeSiteTitle()">تغییر عنوان</button>
+    <button onclick="logoutAdmin()">خروج</button>
+  </div>
+</div>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="#">Tech<span>Nova</span> ⚡</a>
+    <nav>
+      <a href="#home">خانه</a><a href="#lessons">درس‌ها</a><a href="#teacher">معلم</a><a href="#projects">پروژه‌ها</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="grid"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="badge">آینده را بساز، نه اینکه فقط تماشایش کنی ✦</div>
+      <h1>به دنیای<br><span>TechNova</span> خوش آمدی</h1>
+      <p>یک فضای مدرن برای یادگیری «کار و فناوری»؛ جایی برای ایده‌های خلاقانه، پروژه‌های جذاب و کشف دنیای تکنولوژی.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#lessons">شروع یادگیری ←</a>
+        <a class="btn secondary" href="#teacher">آشنایی با معلم</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="orb"><div class="orb-icon">💡</div></div>
+      <div class="stats">
+        <div class="stat"><b>01</b><small>خلاقیت</small></div>
+        <div class="stat"><b>∞</b><small>ایده</small></div>
+        <div class="stat"><b>⚡</b><small>فناوری</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lessons">
+  <div class="section-title"><h2>مسیر یادگیری</h2><p>چند حوزه جذاب برای کشف و تجربه</p></div>
+  <div class="cards">
+    <div class="card"><div class="icon">💻</div><h3>رایانه و برنامه‌نویسی</h3><p>آشنایی با دنیای کدنویسی و ساختن ایده‌های دیجیتال.</p></div>
+    <div class="card"><div class="icon">🎨</div><h3>طراحی و گرافیک</h3><p>تبدیل ایده‌ها به طرح‌هایی زیبا، خلاقانه و کاربردی.</p></div>
+    <div class="card"><div class="icon">🤖</div><h3>فناوری و نوآوری</h3><p>شناخت فناوری‌های جدید و فکر کردن مثل یک سازنده.</p></div>
+  </div>
+</section>
+
+<section id="teacher">
+  <div class="section-title"><h2>معلم این مسیر</h2><p>کسی که مسیر یادگیری را جذاب‌تر می‌کند</p></div>
+  <div class="teacher">
+    <div class="teacher-photo">👨‍🏫</div>
+    <div class="teacher-info">
+      <div class="role">مدرس کار و فناوری</div>
+      <h3>آقای رضایی</h3>
+      <p>در این سایت، دانش‌آموزان می‌توانند مطالب و پروژه‌های درس کار و فناوری را در فضایی ساده و مدرن دنبال کنند و ایده‌های خودشان را به پروژه تبدیل کنند.</p>
+      <div class="buttons"><a class="btn primary" href="#projects">دیدن پروژه‌ها</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-title"><h2>پروژه‌های خلاقانه</h2><p>ایده‌هایی که می‌توانند به واقعیت تبدیل شوند</p></div>
+  <div class="projects">
+    <div class="project"><span>PROJECT 01</span><h3>وب‌سایت دانش‌آموزی</h3><p>طراحی یک صفحه وب ساده با HTML و CSS و یادگیری اصول رابط کاربری.</p></div>
+    <div class="project"><span>PROJECT 02</span><h3>ایده‌پردازی فناوری</h3><p>ساخت یک ایده برای حل یک مشکل واقعی با کمک فناوری.</p></div>
+    <div class="project"><span>PROJECT 03</span><h3>طراحی دیجیتال</h3><p>ساخت پوستر، لوگو یا رابط یک اپلیکیشن با نگاه خلاقانه.</p></div>
+    <div class="project"><span>PROJECT 04</span><h3>چالش نوآوری</h3><p>یک چالش کوتاه برای تبدیل یک ایده ساده به یک راه‌حل جذاب.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="quote"><strong>«ایده‌های امروز، فناوری فردا را می‌سازند.»</strong><p>TechNova — فضای یادگیری کار و فناوری</p></div>
+</section>
+</main>
+
+<footer>
+  ساخته شده با ❤️ برای کلاس کار و فناوری — <b>طراح: علی پوربدخشان</b>
+</footer>
+
+<script>
+const ADMIN_PASSWORD = "aliand8676";
+
+function loginAdmin(){
+  const input = document.getElementById("adminPassword");
+  const error = document.getElementById("errorMsg");
+  if(input.value === ADMIN_PASSWORD){
+    document.getElementById("loginOverlay").style.display="none";
+    document.getElementById("adminPanel").style.display="block";
+    const welcome=document.getElementById("adminWelcome");
+    welcome.style.display="block";
+    setTimeout(()=>welcome.style.display="none",3500);
+    sessionStorage.setItem("technova_admin","1");
+  }else{
+    error.textContent="رمز اشتباه است؛ دوباره تلاش کن.";
+    input.value="";
+    input.focus();
+  }
+}
+function logoutAdmin(){
+  sessionStorage.removeItem("technova_admin");
+  location.reload();
+}
+function changeSiteTitle(){
+  const newTitle=prompt("عنوان جدید سایت را وارد کن:");
+  if(newTitle && newTitle.trim()){
+    document.querySelector(".logo").innerHTML=newTitle.trim()+" ⚡";
+    document.title=newTitle.trim();
+  }
+}
+document.getElementById("adminPassword").addEventListener("keydown",e=>{
+  if(e.key==="Enter") loginAdmin();
+});
+</script>
+</body>
+</html>
